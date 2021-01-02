@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody playerRb;
+    private Animator playerAnim;
 
     public float jumpForce = 10;
     public float gravityModifier;
@@ -19,15 +20,19 @@ public class PlayerController : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody>();
         Physics.gravity *= gravityModifier; // modify how much gravity there is in game
+        playerAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // SPACE KEY
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
+            
+            playerAnim.SetTrigger("Jump_trig");
         }
     }
 
