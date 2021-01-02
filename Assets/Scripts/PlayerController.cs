@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
         {
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
-            
+
             playerAnim.SetTrigger("Jump_trig");
         }
     }
@@ -41,7 +41,8 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             isOnGround = true;
-        } else if (other.gameObject.CompareTag("Obstacle"))
+        }
+        else if (other.gameObject.CompareTag("Obstacle"))
         {
             gameOver = true;
             Debug.Log("Game over!");
