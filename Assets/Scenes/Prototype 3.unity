@@ -337,6 +337,10 @@ PrefabInstance:
       propertyPath: gravityModifier
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 241380861, guid: 2af1fa464b69e4c4cb1a408373c7d971, type: 3}
+      propertyPath: explosionParticle
+      value: 
+      objectReference: {fileID: 1593912958}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2af1fa464b69e4c4cb1a408373c7d971, type: 3}
 --- !u!4 &441915524 stripped
@@ -623,6 +627,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb7cd9b0c56a24d49a40784bd3203ae6, type: 3}
+--- !u!198 &1593912958 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 9125212449759046732, guid: cb7cd9b0c56a24d49a40784bd3203ae6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1253097937}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2014335011
 GameObject:
   m_ObjectHideFlags: 0

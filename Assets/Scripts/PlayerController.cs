@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody playerRb;
     private Animator playerAnim;
+    public ParticleSystem explosionParticle;
 
     public float jumpForce = 10;
     public float gravityModifier;
@@ -36,12 +37,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // ON COLLISION ENTER
     private void OnCollisionEnter(Collision other)
     {
+        // GROUND COLLISION
         if (other.gameObject.CompareTag("Ground"))
         {
             isOnGround = true;
         }
+        
+        // OBSTACLE COLLISION
         else if (other.gameObject.CompareTag("Obstacle"))
         {
             gameOver = true;
@@ -49,6 +54,8 @@ public class PlayerController : MonoBehaviour
 
             playerAnim.SetBool("Death_b", gameOver);
             playerAnim.SetInteger("DeathType_int", 1);
+
+            explosionParticle.Play();
         }
     }
 }
