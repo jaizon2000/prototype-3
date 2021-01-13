@@ -18,7 +18,7 @@ public class MoveLeftX : MonoBehaviour
     void Update()
     {
         // If game is not over, move to the left
-        if (playerControllerScript.gameOver == false)
+        if (playerControllerScript.gameOver == false || gameObject.CompareTag("Bomb") || gameObject.CompareTag("Money"))
         {
             transform.Translate(Vector3.left * (speed * Time.deltaTime));
         }

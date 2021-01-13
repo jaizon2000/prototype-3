@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpinObjectsX : MonoBehaviour
 {
-    public float spinSpeed;
+    public float spinSpeed = 500.0f;
 
     // Update is called once per frame
     void Update()
